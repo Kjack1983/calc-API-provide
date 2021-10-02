@@ -86,4 +86,11 @@ it saves your file whenever localhost:3000 catches any changes.
 
 ```
 
-## Tech stack: #babel #nodejs #express
+#### `npm run test`
+
+```
+npm run test to run unit test when performing calculations.
+
+```
+
+## Tech stack: #babel #nodejs #express #mocha #chai
