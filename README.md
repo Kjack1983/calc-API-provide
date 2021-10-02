@@ -9,9 +9,26 @@ Click here to see the front end application [calculator-front-end](https://githu
 
 ![calc-API-provide](/screenshots/screenshot.png?raw=true "images")
 
+
+
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the following commands:
+
+```
+"scripts": {
+    "start": "npm run prod",
+    "build": "npm-run-all clean transpile",
+    "server": "node ./dist-server/bin/www",
+    "dev": "NODE_ENV=development npm-run-all build server",
+    "prod": "NODE_ENV=production npm-run-all build server",
+    "transpile": "babel ./server --out-dir dist-server",
+    "clean": "rimraf dist-server",
+    "watch:dev": "nodemon",
+    "test": "NODE_ENV=test npx mocha \"server/**/*.test.js\" --recursive --require @babel/register --file ./server/mocha-setup.js"
+}
+```
+
 
 #### `npm install`
 
