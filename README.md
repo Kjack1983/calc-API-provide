@@ -3,6 +3,8 @@
 ## Branches
 * `master`
 
+## Tech stack: #babel #nodejs #express #mocha #chai
+
 # Consuming application
 Click here to see the front end application [calculator-front-end](https://github.com/Kjack1983/calculator-front-end)
 
@@ -92,5 +94,3 @@ it saves your file whenever localhost:3000 catches any changes.
 npm run test to run unit test when performing calculations.
 
 ```
-
-## Tech stack: #babel #nodejs #express #mocha #chai
