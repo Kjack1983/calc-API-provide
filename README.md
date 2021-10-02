@@ -4,7 +4,7 @@
 * `master`
 
 # Consuming application
-[a link](https://github.com/Kjack1983/calculator-front-end)
+Click here to see the front end application [calculator-front-end](https://github.com/Kjack1983/calculator-front-end)
 
 
 ![calc-API-provide](/screenshots/screenshot.png?raw=true "images")
