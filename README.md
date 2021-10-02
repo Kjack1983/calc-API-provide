@@ -13,6 +13,12 @@ Click here to see the front end application [calculator-front-end](https://githu
 
 In the project directory, you can run:
 
+#### `npm install`
+
+```
+Install application. 
+```
+
 #### `npm start`
 
 ```
