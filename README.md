@@ -91,10 +91,15 @@ it saves your file whenever localhost:3006 catches any changes.
 #### `npm run test`
 
 ```
-npm run test to run unit test when performing calculations. Please note that the command in package.json is watching the changes.
+npm run test to run unit test when performing calculations. 
+```
+
+### `npm run test:watch`
+
+```
+npm run test to run unit test when performing calculations. The following command will watch the changes of the js files
 
 NODE_ENV=test npx mocha \"server/**/*.test.js\" --recursive --require @babel/register --file ./server/mocha-setup.js --watch
 
-Therefore if the use applies any short of changes to the tests (e.g change a number) and save it, this will impact the test directly.
-
+Therefore if the user applies any short of changes to the tests (e.g change a number) and save it, this will impact the test directly.
 ```
