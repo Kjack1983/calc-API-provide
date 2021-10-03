@@ -105,3 +105,12 @@ NODE_ENV=test npx mocha \"server/**/*.test.js\" --recursive --require @babel/reg
 
 Therefore if the user applies any short of changes to the tests (e.g change a number) and save it, this will impact the test directly.
 ```
+
+### `npm run coverage`
+
+```
+Using nyc library to create test coverage reports. Run the following command above and check the coverage folder for index.html (right click copy path) and paste to the browser to check the coverage percentage of the file. Check the screenshot below.
+
+```
+
+Coverage report ![calc-API-provide](/screenshots/screenshot_2.png?raw=true "images")
