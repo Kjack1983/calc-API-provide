@@ -1,60 +1,97 @@
 import chai from 'chai';
+const {expect} = chai;
+const should = chai.should();
 import app from '../app';
-import sinon from 'sinon';
-import request from 'supertest';
 import chaiHttp from 'chai-http';
-
 chai.use(chaiHttp);
-describe('Calculator operations', (req, res, next) => {
+
+describe('Calculator operations', () => {
     it('/sum/:num1/:num2 Test the addition of two numbers', (done) => {
-        const num1 = 1;
-        const num2 = 3;
-        const sum = num1 + num2;
+        chai.request(app)
+        .get('/api/sum/2/3')
+        .end((err, res) => {
+            if(err) done(err);
+            res.should.have.status(200);
+            res.should.to.be.json;
+            expect(res.body).to.be.a('object');
 
-        chai.request(app).get('/api/sum/:num1/:num2')
-        chai.expect(200)
-        chai.expect('Content-Type', /json/)
-        chai.expect(sum).to.be.a('number')
-        chai.expect(sum).to.equal(4);
-        done();
-    });
+            const { 
+                body: { sum } 
+            } = res;
 
+            const actual = sum;
+            const expected = 5;
+            expect(actual).to.be.a('number');
+            expect(expected).to.be.a('number');
+            expect(actual).to.be.equal(expected);
+            done();
+        })
+        
+    })
+    
     it('/sub/:num1/:num2 Test the subtraction of two numbers', (done) => {
-        const num1 = 4;
-        const num2 = 3;
-        const sub = num1 - num2;
+        chai.request(app)
+        .get('/api/sub/5/3')
+        .end((err, res) => {
+            if(err) done(err);
+            res.should.have.status(200);
+            res.should.to.be.json;
+            expect(res.body).to.be.a('object');
 
-        chai.request(app).get('/api/sub/:num1/:num2')
-        chai.expect(200)
-        chai.expect('Content-Type', /json/)
-        chai.expect(sub).to.be.a('number')
-        chai.expect(sub).to.equal(1);
-        done();
+            const { 
+                body: { subtraction } 
+            } = res;
+
+            const actual = subtraction;
+            const expected = 2;
+            expect(actual).to.be.a('number');
+            expect(expected).to.be.a('number');
+            expect(actual).to.be.equal(expected);
+            done();
+        })
     });
 
     it('/mul/:num1/:num2 Test the multiplication of two numbers', (done) => {
-        const num1 = 4;
-        const num2 = 3;
-        const multiplication = num1 * num2;
+        chai.request(app)
+        .get('/api/mul/5/3')
+        .end((err, res) => {
+            if(err) done(err);
+            res.should.have.status(200);
+            res.should.to.be.json;
+            expect(res.body).to.be.a('object');
 
-        chai.request(app).get('/api/sub/:num1/:num2')
-        chai.expect(200)
-        chai.expect('Content-Type', /json/)
-        chai.expect(multiplication).to.be.a('number')
-        chai.expect(multiplication).to.equal(12);
-        done();
+            const { 
+                body: { multiplication } 
+            } = res;
+
+            const actual = multiplication;
+            const expected = 15;
+            expect(actual).to.be.a('number');
+            expect(expected).to.be.a('number');
+            expect(actual).to.be.equal(expected);
+            done();
+        });
     });
 
     it('/div/:num1/:num2 Test the multiplication of two numbers', (done) => {
-        const num1 = 12;
-        const num2 = 3;
-        const division = num1 / num2;
+        chai.request(app)
+        .get('/api/div/15/3')
+        .end((err, res) => {
+            if(err) done(err);
+            res.should.have.status(200);
+            res.should.to.be.json;
+            expect(res.body).to.be.a('object');
 
-        chai.request(app).get('/api/div/:num1/:num2')
-        chai.expect(200)
-        chai.expect('Content-Type', /json/)
-        chai.expect(division).to.be.a('number')
-        chai.expect(division).to.equal(4);
-        done();
+            const { 
+                body: { division } 
+            } = res;
+
+            const actual = division;
+            const expected = 5;
+            expect(actual).to.be.a('number');
+            expect(expected).to.be.a('number');
+            expect(actual).to.be.equal(expected);
+            done();
+        });
     });
 });

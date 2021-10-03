@@ -4,9 +4,9 @@ import bodyParser from 'body-parser';
 const calcRouter = express.Router();
 calcRouter.use(bodyParser.json());
 
-calcRouter.get('/sum/:num1/:num2', (req, res, next) => {
-    let {num1, num2} = req.params;
-    const sum = Number(num1) + Number(num2);
+calcRouter.get('/sum/:leftoperand/:rightoperand', (req, res, next) => {
+    let {leftoperand, rightoperand} = req.params;
+    const sum = Number(leftoperand) + Number(rightoperand);
 
     // Cheking .
     if (isNaN(sum)) {
@@ -23,9 +23,9 @@ calcRouter.get('/sum/:num1/:num2', (req, res, next) => {
     next();
 });
 
-calcRouter.get('/sub/:num1/:num2', (req, res, next) => {
-    let {num1, num2} = req.params;
-    const subtraction = Number(num1) - Number(num2);
+calcRouter.get('/sub/:leftoperand/:rightoperand', (req, res, next) => {
+    let {leftoperand, rightoperand} = req.params;
+    const subtraction = Number(leftoperand) - Number(rightoperand);
 
     // Cheking .
     if (isNaN(subtraction)) {
@@ -42,9 +42,9 @@ calcRouter.get('/sub/:num1/:num2', (req, res, next) => {
     next();
 });
 
-calcRouter.get('/mul/:num1/:num2', (req, res, next) => {
-    let {num1, num2} = req.params;
-    const multiplication = Number(num1) * Number(num2);
+calcRouter.get('/mul/:leftoperand/:rightoperand', (req, res, next) => {
+    let {leftoperand, rightoperand} = req.params;
+    const multiplication = Number(leftoperand) * Number(rightoperand);
 
     // Cheking .
     if (isNaN(multiplication)) {
@@ -61,9 +61,9 @@ calcRouter.get('/mul/:num1/:num2', (req, res, next) => {
     next();
 });
 
-calcRouter.get('/div/:num1/:num2', (req, res, next) => {
-    let {num1, num2} = req.params;
-    const division = Number(num1) / Number(num2);
+calcRouter.get('/div/:leftoperand/:rightoperand', (req, res, next) => {
+    let {leftoperand, rightoperand} = req.params;
+    const division = Number(leftoperand) / Number(rightoperand);
 
     // Cheking .
     if (isNaN(division)) {
