@@ -1,5 +1,5 @@
 import chai from 'chai';
-const {expect} = chai;
+const { expect } = chai;
 const should = chai.should();
 import app from '../app';
 import chaiHttp from 'chai-http';
