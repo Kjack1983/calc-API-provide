@@ -84,7 +84,7 @@ If we have a dev script that sets the Node Environment to development, we have a
 #### `npm run watch:dev`
 
 ```
-it saves your file whenever localhost:3000 catches any changes.
+it saves your file whenever localhost:3006 catches any changes.
 
 ```
 
