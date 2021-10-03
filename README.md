@@ -27,7 +27,7 @@ In the project directory, you can run the following commands:
     "transpile": "babel ./server --out-dir dist-server",
     "clean": "rimraf dist-server",
     "watch:dev": "nodemon",
-    "test": "NODE_ENV=test npx mocha \"server/**/*.test.js\" --recursive --require @babel/register --file ./server/mocha-setup.js"
+    "test": "NODE_ENV=test npx mocha \"server/**/*.test.js\" --recursive --require @babel/register --file ./server/mocha-setup.js --watch"
 }
 ```
 
@@ -91,6 +91,10 @@ it saves your file whenever localhost:3006 catches any changes.
 #### `npm run test`
 
 ```
-npm run test to run unit test when performing calculations.
+npm run test to run unit test when performing calculations. Please note that the command in package.json is watching the changes.
+
+NODE_ENV=test npx mocha \"server/**/*.test.js\" --recursive --require @babel/register --file ./server/mocha-setup.js --watch
+
+
 
 ```
