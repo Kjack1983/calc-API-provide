@@ -95,6 +95,6 @@ npm run test to run unit test when performing calculations. Please note that the
 
 NODE_ENV=test npx mocha \"server/**/*.test.js\" --recursive --require @babel/register --file ./server/mocha-setup.js --watch
 
-
+Therefore if the use applies any short of changes to the tests (e.g change a number) and save it, this will impact the test directly.
 
 ```
