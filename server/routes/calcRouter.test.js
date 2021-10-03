@@ -14,7 +14,7 @@ describe('Calculator operations', () => {
             res.should.have.status(200);
             res.should.to.be.json;
             expect(res.body).to.be.a('object');
-
+            
             const { 
                 body: { sum } 
             } = res;
@@ -22,7 +22,11 @@ describe('Calculator operations', () => {
             const actual = sum;
             const expected = 5;
             expect(actual).to.be.a('number');
+
+            // Asserts that the target is a number, and isn’t NaN or positive/negative Infinity
+            expect(actual).to.be.finite;
             expect(expected).to.be.a('number');
+            expect(expected).to.be.finite;
             expect(actual).to.be.equal(expected);
             done();
         })
@@ -44,8 +48,11 @@ describe('Calculator operations', () => {
 
             const actual = subtraction;
             const expected = 2;
-            expect(actual).to.be.a('number');
+            
+            // Asserts that the target is a number, and isn’t NaN or positive/negative Infinity
+            expect(actual).to.be.finite;
             expect(expected).to.be.a('number');
+            expect(expected).to.be.finite;
             expect(actual).to.be.equal(expected);
             done();
         })
@@ -66,8 +73,11 @@ describe('Calculator operations', () => {
 
             const actual = multiplication;
             const expected = 15;
-            expect(actual).to.be.a('number');
+
+            // Asserts that the target is a number, and isn’t NaN or positive/negative Infinity
+            expect(actual).to.be.finite;
             expect(expected).to.be.a('number');
+            expect(expected).to.be.finite;
             expect(actual).to.be.equal(expected);
             done();
         });
@@ -88,8 +98,11 @@ describe('Calculator operations', () => {
 
             const actual = division;
             const expected = 5;
-            expect(actual).to.be.a('number');
+            
+            // Asserts that the target is a number, and isn’t NaN or positive/negative Infinity
+            expect(actual).to.be.finite;
             expect(expected).to.be.a('number');
+            expect(expected).to.be.finite;
             expect(actual).to.be.equal(expected);
             done();
         });
