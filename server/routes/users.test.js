@@ -14,9 +14,6 @@ describe('Users test', () => {
             res.should.have.status(200);
             res.body.should.be.a('object');
             let { body: { message } } = res;
-
-            console.log('%c%s', 'color: #09ff00', ' ===== MESSAGES FROM USER ROUTER ====', message);
-
             expect(message).to.be.a('string');
             const actual = message;
             expect(actual).to.be.equal('No users at the moment!');
