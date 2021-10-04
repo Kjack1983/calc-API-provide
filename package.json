@@ -24,7 +24,8 @@
     "clean": "rimraf dist-server",
     "watch:dev": "nodemon",
     "test": "NODE_ENV=test npx mocha \"server/**/*.test.js\" --recursive --require @babel/register --file ./server/mocha-setup.js",
-    "test:watch": "NODE_ENV=test npx mocha \"server/**/*.test.js\" --recursive --require @babel/register --file ./server/mocha-setup.js --watch"
+    "test:watch": "NODE_ENV=test npx mocha \"server/**/*.test.js\" --recursive --require @babel/register --file ./server/mocha-setup.js --watch",
+    "coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=text npm run test"
   },
   "babel": {
     "presets": [
@@ -51,6 +52,7 @@
     "chai-http": "^4.3.0",
     "mocha": "^9.1.2",
     "nodemon": "^2.0.13",
+    "nyc": "^15.1.0",
     "regenerator-runtime": "^0.13.9",
     "sinon": "^11.1.2",
     "supertest": "^6.1.6"
