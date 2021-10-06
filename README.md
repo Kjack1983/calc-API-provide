@@ -29,7 +29,7 @@ In the project directory, you can run the following commands:
     "watch:dev": "nodemon",
     "test": "NODE_ENV=test npx mocha \"server/**/*.test.js\" --recursive --require @babel/register --file ./server/mocha-setup.js",
     "test:watch": "NODE_ENV=test npx mocha \"server/**/*.test.js\" --recursive --require @babel/register --file ./server/mocha-setup.js --watch"
-
+    "coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=text npm run test"
 }
 ```
 
